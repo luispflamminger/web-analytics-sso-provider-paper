@@ -36,6 +36,9 @@ Sign in with Google - Opportunities and risks of using single sign-on providers 
 - single sign on protocols
 - single sign on google user tracking
 - sso user tracking
+- single sign on
+- passwords survey
+- federated login
 
 ### Citable:
 - Single Sign-on (SSO): High-impact Strategies - What You Need to Know
@@ -54,7 +57,22 @@ Sign in with Google - Opportunities and risks of using single sign-on providers 
 - The Web SSO Standard OpenID Connect: In-depth Formal Security Analysis and Security Guidelines
 - Migrating towards Single Sign-On and Federated Identity
 - A billion keys, but few locks: the crisis of web single sign-on
+- A Survey on Single Sign-On Techniques
+- Passwords Usage and Human Memory Limitations: A Survey across Age and Educational Background
+- Generating and remembering passwords
+- Password Authentication from a Human Factors Perspective: Results of a Survey among End-Users
+- A Taxonomy of Single Sign-On Systems
+- A Large-Scale Study of Web Password Habits
 	
 ### Websites:
 - Potenzial von Single Sign-on bei Webapplikationen - Eine Analyse anhand Java-basierter Lösungen (Bachelorarbeit)
-- https://developers.google.com/identity/sign-in/web/sign-in
+- https://developers.google.com/identity/sign-in/web/
+- https://developers.facebook.com/docs/facebook-login/
+- https://developer.apple.com/sign-in-with-apple/
+- https://www.loginradius.com/blog/identity/federated-identity-providers/
+- https://wso2.com/articles/2018/06/what-is-federated-identity-management/
+- https://www.onelogin.com/learn/federated-identity
+- https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers.html
+- https://www.okta.com/de/identity-101/federated-identity-vs-sso/
+- https://www.okta.com/sites/default/files/2020-07/Okta_Passwordless_Report_Anglicised_Version_0.pdf
+- https://www.youtube.com/watch?v=Oy5F9h5JqEU (Introduction to Google Sign-In for Websites)
