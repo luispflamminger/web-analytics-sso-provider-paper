@@ -8,7 +8,7 @@ EXCLUDE_ADDITIONAL_ENVIRONMENTS=""
 detex -e $EXCLUDE_ENVIRONMENTS$EXCLUDE_ADDITIONAL_ENVIRONMENTS thesis_main.tex  > thesis_main.txt
 
 # Removes everything before Einleitung and after Anhang
-BEGINNING="Einleitung"
+BEGINNING="INTRODUCTION"
 ENDING="nottype"
 while read p; do
   # end txt when end was found
@@ -22,6 +22,6 @@ while read p; do
 done <thesis_main.txt
 
 echo "Anzahl der Wörter vom Kapitel Einleitung bis Anhang:"
-wc -w wordcounts.txt # zeilen, wörter, zeichen
+#wc -w wordcounts.txt # zeilen, wörter, zeichen
 #rm wordcounts.txt 2> /dev/null
 #rm thesis_main.txt 2> /dev/null

@@ -3,9 +3,91 @@
 
 \subsection{Higher Conversion Rates}
 
+The conversion rate is one of the most important e-commerce metrics.
+It gives the percentage of users who visited the website that resulted in actual sales.\footcite[Cp.][p. 1]{Gabir2018}
+There are a number of factors that can influence conversion rate.
+On the one hand these include multiple aspects that have nothing to do with the website.
+The type and range of products offered on the website are important.
+A store selling clothing might have a much higher conversion rate than a website selling luxury cars, for example\footcite[Cp.][p.165]{Fatta2018}.
+The pricing strategy also has an impact. If the website is offering attractive pricing on their products and additional
+bonuses like free shipping or frequent discounts, conversion rates are increased\footcite[Cp.][p.165]{Fatta2018}.
+The promotion aspect is another important factor. If the brands advertising clearly an effectively promotes its products
+visitors are more likely to buy on the first visit\footcite[Cp.][p.165]{Fatta2018}.
+
+The factors mentioned above are related to the web presence, in that offers like discounts and free shipping
+need to be effectively presented on the platform. But in order to have a decent conversion rate, technical
+factors on the website also have to be addressed\footcite[Cp.][p. 5]{Gabir2018}.
+
+Usability is directly related to how the website is built and which features the e-commerce system has\footcite[Cp.][p. 2f]{Gabir2018}.
+There are three dimensions of usability on a website.
+Information Quality describes how accurate, relevant and timely the content on the website is.
+Service Quality describes how interactive and responsive the website is, how good the search function works
+and how well the security and privacy policies are presented.
+System Quality includes how easy the site is to navigate, how fast the checkout process is
+and aspects like accessibility, and consistency of layout.\footcite[Cp. ][p. 3]{Kuan}
+Research has shown, that all three dimensions have a direct impact on conversion rates and customer retention.
+Users, which perceive a higher information and system quality are significantly more likely to complete
+a purchase\footcite[Cp.][p. 6]{Kuan}.
+Service quality might have a measurable impact, but studies diverge here\footcite[Cp.][p. 6]{Kuan}\footcite[Cp.][p. 5]{Gabir2018}.
+A survey shows that the second most common reason why adults in the \ac{US} do not complete the checkout
+process, is that they had to create an account. 17\% said, that the checkout process was too long and complicated.\footcite[Cp.][]{Baymard2022}
+Additional research shows, that a requirement as simple as entering the e-mail address has a high negative impact on conversion rate\footcite[Cp.][p. 4]{McDowell2016}
+
+%image of the survey?
+Web \ac{SSO} offers solutions to all factors which increase conversion rates mentioned above.
+By signing in with an \ac{IdP} before or during the checkout process, users do not have to create a seperate
+account with the e-commerce site. Even for web shops, that don't require users to create an account, \ac{SSO} offers benefits.
+Traditionally users have had to re-enter their personal information like name, address, phone number and birth date
+with each site they were shopping on\footcite[Cp. ][p. 24]{Beltran2016}. With \ac{SSO} users can choose to share their information that they have
+registered with the \ac{IdP} and thus skip the process of entering their information.
+Thus, \ac{SSO} increases the checkout speed both with required account creation and without.
+This also directly addresses two common reasons why customers abandon their cart during the checkout process.
+
 \subsection{Simpler Account Management}
 %Only using SSO providers and thus not having to store passwords...
 
-\subsection{Lower Risk of Data Leaks}
+User account management, authentication and authorization are big parts of web development and require
+a lot of development resources.
+Using \ac{SSO}, the burden of implementing user authentication forms, developing password criteria,
+storing passwords securely, designing appropriate databases and many more aspects are completely put
+on the \ac{IdP}. Furthermore, providers like Google and the well defined \ac{SSO} protocols
+make implementation of social login services easy for developers.
+This helps to reduce development resources, complexity and cost.\footcite[Cp.][p. 22]{Bazaz2016}
+
+In addition to development, the administration of a website is simplified when using \ac{SSO}.
+User data stored with the \ac{IdP} does not need to be managed by the \ac{SP}, reducing storage needs
+operation complexity and cost. Of course, the degree of savings depends on what percentage of users is willing
+to adopt \ac{SSO} and wether or not traditional login is still needed\footcite[Cp.][p. 22]{Bazaz2016}.
+As shown in section \ref{sec:sign_in_with_google}, \acp{IdP} like Google make it possible to completely
+abandon account management and only use Google's identity management service.
+Depending on the needs of the \ac{SP}, this approach might limit the functionality of the website\footcite[Cp.][p. 22]{Bazaz2016}.
+
+% Implementing MFA complex
+
+\subsection{Increased Security}
+
+As users that use social login don't have to create passwords for each website they have an account with, security is increased.
+On average, users seem to have between six and seven unique passwords. Each of these passwords is reused on just
+under six different sites, which totals an average of about 36 unique login combinations that each user has to remember.\footcite[Cp.][p. 4]{Florencio2006}
+Reusing the same password on multiple sites is very insecure.
+If a website is compromised and passwords are leaked to the public, hackers can try the same username and password
+combination on other websites to gain access. Additionally, if a user is subject to a phishing attack,
+hackers are able to compromise multiple of the user's accounts.\footcite[Cp.][]{McDade2022}
+Even if a website is not responsible for a password leak, users hacked this way will still associate a negative
+experience with the brand and reduce interactions in the future.
+\ac{SSO} eliminates this issue, as users do not need to think of new passwords for every login and are therefore
+not able to reuse the same password twice.
+As \acp{IdP} are usually large corporations, their security standards regarding credentials are strict and
+breaches are less likely to happen. \textbf{(source)}
+
+%
+% https://scholar.google.com/scholar?hl=de&as_sdt=0%2C5&q=data+breaches+google+facebook&btnG=
+% https://watermark.silverchair.com/tyw003.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAtAwggLMBgkqhkiG9w0BBwagggK9MIICuQIBADCCArIGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMGWcvk0He3Ahd1tHlAgEQgIICg6VB5sHyFHeMRNmRO8LCIY8UCotYB2j0bW9GoWwkrCDvgNpeYaMhFn8hbH-eNZyokJ6QtNMbluAmcXDFlz5sIfPneb4rrfVTez5gFhS42fnQM0UdyzoChiaZv8BDgM_j0_hOtyjG3UntOVwSmy6BO68hnNLOHyUfCqnMTIhUlQXJ7q4qmA8hiHYI2MiEcwIe9_pwLXGs-Z1UuHV9774UEGINyLLDpItgMMzXN7crp7UhtChyFbaEh3gUAWmwfu8Dclkyb385MLxRsyRDlMmRaHOMfa-XzQdejcs7ZTdZUcyQfwOgiVJ-_6X_TBuhL3EOTBxJupK8HAQ2ckRj1c_ZLFa6n9DY2a5F-TijMHyiy5V6Jrs2-A5luwdhup0XFLqzZezvBNkliSzSTzH65QafTvLiMBuKTHw89qswyprl9rDwXyI9XHFfeEofRNj_EWKQk-d5ph47iN28f09CKVYgqyQwNeuc3F0flbaJP640yUb_2bllOBancf2oV2QIDfGvhGP9mdD1wRMzjOWwa3e9oINuk9ROh9y_GEK4Uw55iUJDNmkDoiZLfGZCMDtyTO7eSJSrLQkwgwOEuwYEBWBKSDZNwGYaIf7rQB_Fsr0DefrtFGm4cYYPCjnZCoIw1TIWwHheoBzkd6iuMPHlDxZAW1UGUD25dSldlhymAvPcJsnyCI0gHnqdjU05f_ZWQpVvn4PVzNwt2-lRibA79KfvKE97_ySpC9-a98JmQCo12tsFnzHce3nTL-DLbwdOp1Xyy2vZEACARCB0xlukb7GPIdQK96tJ9RTO6GtaSwV8m5q0sWSsVUBPChFCqxCSwkBDkULnPAt9vUGhIDtyzw8p2IF6d4U
+% https://sci-hub.hkvisa.net/10.1080/15536548.2012.10845654
+% https://firewalltimes.com/google-data-breach-timeline/
+% https://firewalltimes.com/facebook-data-breach-timeline/
+% https://firewalltimes.com/apple-data-breach-timeline/
+
+% Implementing MFA complex
 
 \subsection{Cross-Platform User Tracking}
