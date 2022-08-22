@@ -153,6 +153,7 @@ urldate=iso,
 innamebeforetitle,
 dashed=false,
 autocite=footnote,
+doi=false,
 useprefix=true, % 'von' im Namen beachten (beim Anzeigen)
 mincrossrefs = 1
 ]{biblatex}%iso dateformat für YYYY-MM-DD
@@ -336,6 +337,9 @@ mincrossrefs = 1
 %-----------------------------------
 \input{sections/00_titlepage}
 
+\input{sections/00_abstract}
+\newpage
+
 %-----------------------------------
 % Inhaltsverzeichnis
 %-----------------------------------
@@ -354,8 +358,8 @@ mincrossrefs = 1
 %-----------------------------------
 % Tabellenverzeichnis
 %-----------------------------------
-%\listoftables
-%\newpage
+\listoftables
+\newpage
 %-----------------------------------
 % Abkürzungsverzeichnis
 %-----------------------------------
@@ -467,8 +471,8 @@ mincrossrefs = 1
 % Inhaltsverzeichnis, sondern gehören zum Literaturverzeichnis.
 % Die Option heading=bibintoc würde die Internetquelle als eigenen Eintrag im
 % Inhaltsverzeicnis anzeigen.
-\printbibliography[type=online,heading=bibintoc,title={\headingNameInternetSources}]
-%\printbibliography[type=online,heading=subbibliography,title={\headingNameInternetSources}]
+%\printbibliography[type=online,heading=bibintoc,title={\headingNameInternetSources}]
+\printbibliography[type=online,heading=subbibliography,title={\headingNameInternetSources}]
 
 \input{sections/06_Anhang/erklaerung}
 \end{document}

@@ -1,21 +1,76 @@
 \newpage
 
-\section{Risks of using \ac{SSO} Services}
+\section{Risks}
+\label{sec:risks}
 
-\subsection{Association with providers}
+\subsection{User Acceptance}
 
-\subsection{Loss of Users}
+One risk of implementing Social Login services on a website is user acceptance.
+According to a study in 2014, 85\% of people were aware of social login features while 59.4\% were already
+using them.\footcite[Cp. ][p. 68]{Gafni2014}
+This number might have gone up in the mean time, as social login has become much more present across the web.
+A study from 2018 showed, that acceptance of social login varies within age groups and knowledge levels.
+Male users seem to have a higher acceptance than female users and people with knowledge about privacy related topics
+are more careful and use them less.\footcite[Cp.][p. 7]{Jiang2018}
+Additionally, some users are already used to the username and password system and
+might be hesitant to change their behaviours. This is supported by the password management and cloud-sync features
+of most modern browsers, which allow users to automatically generate and fill in passwords.\footcite[Cp.][p. 22]{Bazaz2016}
 
-\subsection{Leakage of User Data}
+Users might also not trust the social login provider to keep their personal data safe.
+They fear that personal information saved within their social media account is being shared with third-parties without
+their consent and that they thus lose their anonymity on the internet.\footcite[Cp.][p. 22]{Bazaz2016}\footcite[Cp.][p.61]{Gafni2014}
+Users are also concerned that \ac{IdP} track them on the websites they are logged in on and might be able to collect
+an extensive range of behaviour and user data.\footcite[Cp.][p. 60]{Gafni2014}
 
-\subsection{Technical Complexity of Integration}
+Lastly, being redirected to a different website and asked to log in there can be confusing for less technically literate
+users. As the \ac{SSO} process requires this, users might get confused and shy away from these services.\footcite[Cp.][p. 23]{Bazaz2016}
 
-%file:///home/luisp/Downloads/A_Review_on_Single_Sign_on_Enabling_Technologies_a.pdf
+Because of the reasons mentioned above, if a website decides to rely solely on \ac{SSO} for user logins,
+specific groups of users are inherently less likely to register with the website, which leads to a loss of potential customers.
 
-% Privacy concerns
+\subsection{Identity Provider as Single Point of Failure}
 
-% Reliance on external IdP
+Users that created an account using \ac{SSO} typically do not create a seperate password with their account,
+as authentication is handled by the \ac{IdP}. The only way for a user to sign in is through the \ac{IdP}.\footcite[Cp.][p. 24]{Bazaz2016}
+This means that a given user would not be able to log in at all in the following scenarios:
 
-% Trust
+\begin{itemize}
+    \item The \ac{IdP} encounters an outage and their authentication service is unreachable.
+    \item The \ac{IdP} encounters data loss and is not able to provide the necessary identity information.
+    \item The \ac{IdP} terminates their service indefinitely.
+\end{itemize}
+
+While the first scenario would only result in a temporary inability to sign in, the others could result
+in a permanent loss of all users that signed in using that specific \ac{IdP}.\footcite[Cp.][p. 22]{Bazaz2016}
+This means that the \ac{SP} is heavily dependent on the \ac{IdP} to have uninterrupted availability and to never terminate
+their service\footcite[Cp.][p. 62]{Sun2010}.
+There are ways to recover these accounts (e.g. e-mail account reset), but this only works if the \ac{SP} has stored
+the appropriate user information on their own server, which might not always be the case.
+
+\subsection{Security of SSO Technologies}
+
+Researchers have found security flaws in many widely used \ac{SSO} implementations.
+This includes OpenID but also specific implementations from Google and Facebook.\footcite[Cp.][p. 376]{Wang2012}
+Although such vulnerabilities usually get patched very quickly\footcite[Cp.][p. 370-375]{Wang2012}, this might still give hackers the
+opportunity to attain the identity of a different user and act in their name.
+Most of the vulnerabilities stemmed from problems on the side of the \ac{SP},
+which used the given \ac{SSO} protocol in a way that the \ac{IdP} did not anticipate\footcite[Cp.][p. 376]{Wang2012}.
+Security issues like these are very hard to recognize as they depend on the 
+specific implementation on each website.
+The security benefits of not having to store passwords are thus negated by the possibility
+of having an insecure \ac{SSO} implementation.
+
+\subsection{Security Standards of Identity Providers}
+
+The complete reliance on an \ac{IdP} for authentication also has implications for security.
+The \ac{IdP} gets to choose which security guidelines they implement, what password criteria they define,
+whether or not they require the use of \ac{MFA} and how their password databases are secured.
+If the \ac{IdP} relies on bad security practices, this directly reflects on the security of the \ac{SP}.
+Hackers taking over a user's account with the \ac{IdP} leads to them also getting access to the user's data on the \ac{SP}'s site.
+
+Making this worse, \acp{SP} have a limited amount of flexibility. If a percentage of their userbase has signed in through an \ac{SSO}
+provider, it is not possible to switch off of that provider without losing those users.
+This further strengthens the dependency on \acp{IdP}.
 
 % Legal requirements: https://dl.acm.org/doi/pdf/10.1145/3167132.3167259?casa_token=Fvk10TNXWLoAAAAA:xsPxmQJxFKbd4GzAerqUvjZ8JJfgTfzYhql9zZ2Zy6aIKsj2sfjmt0f-rJ_t7RfxQm5e1AqkS619-Q
+% https://dl.acm.org/doi/pdf/10.1145/2554850.2554857?casa_token=N737urQVZT8AAAAA:etyumP7dyJ5-sSpmqwMXCJMXH3Ib7Tl0x09xLS8yiDqPYoulz3cUJyRFW0pYQkwn26tl28__Dcs_jQ

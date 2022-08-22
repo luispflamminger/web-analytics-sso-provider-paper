@@ -1,10 +1,47 @@
+\newpage
 \section{Conclusion}
 
-Table summarizing results.
-Only looked at it from a technical perspective.
-Focused on scenario, that website is developed by the company itself.
-Most of the points covered in this paper do not applied to websites hosted using services
-like Shopify or Wix.
-Even if self developed, there might be frameworks that drastically reduce the complexity of
-account management.
-Even then opportunities like the increased conversion rate make a good argument for using Web \ac{SSO}.
+In conclusion, Web \ac{SSO} and Social Login are exiting technologies that give \acp{SP} a lot of
+additional ways to offer quick and easy sign in functionality to their users.
+This paper has shown, that the technology provides operators of web platforms and e-commerce sites
+with many opportunities to improve their business metrics, security and usability if they are willing
+to manage the risks.
+Table \ref{tbl:opps_risks} summarizes the opportunities and risks presented in sections \ref{sec:opportunities} and \ref{sec:risks}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{llrrr}
+        \toprule
+        Opportunities & Risks \\
+        \midrule
+          Increasing Conversion Rates & User Acceptance \\
+          Reducing Development Cost & \ac{IdP} as single point of failure \\
+          Reducing Operation Cost & Security of \ac{SSO} technologies \\
+          Increasing User Security & Security Standards of \acp{IdP} \\
+        \bottomrule
+        \end{tabular}        
+    \caption{Opportunities and Risks of using \ac{SSO} on websites}%
+    \label{tbl:opps_risks}
+  \end{table} 
+
+It has to be mentioned, that many of the discussed opportunities like reducing development cost are only fully applicable, if
+\ac{SSO} completely replaces traditional login with username and password. On the other hand, this greatly
+increases risks like dependency on the availability of \acp{IdP}.
+
+Lastly, it is important to understand the limits of this paper. The examined aspects only cover a subset of the possible
+risks associated with \ac{SSO}. Focus was put on the Social Login aspect of \ac{SSO} targeted at businesses providing
+services to end users on the public web. Mainly the technical and business aspects of \ac{SSO} were focused,
+leaving out possible risks in other areas like the legal perspective of Social Login\footcite[Cp.][]{Karegar2018}.
+Most of the opportunities outlined in the paper only apply to businesses that develop their own websites.
+The possible existence of frameworks or services that might provide simple solutions to account management were
+not taken into consideration. All-in-one solutions like Wix or Shopify were also not considered.
+
+
+% Table summarizing results.
+% Only looked at it from a technical perspective.
+% Focused on scenario, that website is developed by the company itself.
+% Most of the points covered in this paper do not applied to websites hosted using services
+% like Shopify or Wix.
+% Even if self developed, there might be frameworks that drastically reduce the complexity of
+% account management.
+% Even then opportunities like the increased conversion rate make a good argument for using Web \ac{SSO}.

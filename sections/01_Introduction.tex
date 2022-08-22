@@ -1,51 +1,43 @@
 \section{Introduction}
-% Could also be Motivation & Problem Definition, Goal and Approach
-% Or Motivation and Methodology
-\subsection{Abstract}
 
 \subsection{Motivation}
 
-One of the most difficult aspects of operating a website or app is dealing with user
-authentication and passwords.
+% Password fatigue
+The web is a big part of most people's lives. 
+Social media services are used to keep in touch with friends and family,
+discover new things and keep up to date with ones individual interests.
+Streaming services and video platforms are used to consume content,
+e-commerce sites are used for shopping and
+online productivity suites are used constantly in the workplace in a wide
+range of industries.
 
-Regularly, hackers try to break into the databases of internet services to reveal account data and 
-passwords of their users.
+Most modern web services require users to create an account so the platform
+can keep track of user data and provide personal recommendations.
+This results in the average user having around 36 unique login combinations they need to remember\footcite[Cp.][p. 4]{Florencio2006},
+which leads to many users forgetting their password or re-using passwords on multiple sites.
 
-The best-practices for encrypting passwords and storing them safely are changing
-continuously and keeping up with new security standards and requirements is costly and time consuming.
+There are many solutions to this problem, such as password managers or auto-fill features in modern web browsers.
+A different solution that doesn't rely on password management on the user's side is called Single Sign-On (SSO).
+It allows users to log into many different web services using a single set of credentials\footcite[Cp.][134]{Radha2012}.
+Large internet corporations like Google and Facebook provide services that allow users to sign into
+different websites using their existing account\footcite[Cp.][p. 2]{Gafni2014}.
+Websites get the benefit of providing users with a quick way to sign in, simplifying their user interfaces
+and getting access to existing user data\footcite[Cp.][]{GoogleSignIn2022}.
+This paper examines how \ac{SSO} works, what opportunities it provides and which risks are associated with implementing it.
 
-Managing passwords and usernames is not only a technical challenge, but also puts a burden
-on end users.\footcite[Cp. ][p. 459]{Hoonakker2009}
+\subsection{Research Goals \& Structure}
 
-A majority of users still don't manage their passwords in the recommended way, which is
-generating a new password for each login and storing every password in a secure password safe.
-A modern internet user on average uses x different services that require a login.
-This results in most users using the same password for many or all of these services,
-which makes it easy for hackers to overtake a users online presence if only one of their
-passwords is hacked or leaked.
+This paper's structure is tightly aligned with its goals.
 
-Because of these problems, SSO is good fivehead.
+The first goal is to give an understanding of how \ac{SSO} functionality works.
+To achieve this, the basics of authentication and authorization are explained in section \ref{sec:authn_authz}.
+Next, important terms related to \ac{SSO} are defined and the types and use cases,
+as well as protocols and technologies are examined (section \ref{sec:sso_fim}). Then an overview of \ac{SSO} providers is given.
 
+The second goal is to present opportunities that \ac{SSO} gives businesses that operate websites and platforms
+targeting end users on the open web. To achieve this, important opportunities are explained and discussed in section \ref{sec:opportunities}.
 
+The third goal is to present and discuss some of the risks that come with implementing \ac{SSO} from the point of view of a
+business operating a website (section \ref{sec:risks}).
 
-
-
-
-
-Digital services have revolutionized the way people 
-
-
-Remembering passwords is hard bla bla
-
-Reusing the same password is insecure and hackers have used this
-
-
-
-- Account management is hard
-- Hackers are trying to find security flaws and publish passwords
-- Two factor authentication is annoying for customers etc.
-
-
-\subsection{Problem Definition and Goal}
-
-\subsection{Approach}
+Finally, the paper is concluded and possible shortcomings are discussed.
